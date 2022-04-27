@@ -159,7 +159,11 @@ public class Nematode {
 
         }
      
+       
+        float y2 = nv.height/2;
 
+        nv.triangle(x-300, y2,x-200,y2-50,x-200,y2+50);
+        nv.triangle(x+300, y2,x+200,y2-50,x+200,y2+50);
 
     }
     
