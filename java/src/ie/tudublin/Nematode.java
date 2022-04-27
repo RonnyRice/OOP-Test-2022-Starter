@@ -117,6 +117,7 @@ public class Nematode {
            float  y = PApplet.map(i, 0, length, border, nv.height - border);
          
 
+           
             // worm segment
             nv.circle(x, y, segmentSize);
             // limbs
