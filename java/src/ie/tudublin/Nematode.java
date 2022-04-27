@@ -88,8 +88,7 @@ public class Nematode {
     public void render(NematodeVisualiser nv){
 
         
-        nv.noFill();
-        nv.stroke(255);
+        
         float segmentSize = 40;
         float radius = segmentSize / 2;
         float Vsize = (segmentSize) * 0.75f; 
@@ -103,6 +102,7 @@ public class Nematode {
         nv.textAlign(nv.CENTER, nv.BOTTOM);
         nv.text(this.name, x, y1 - 50);
 
+        nv.noFill();
         //eyes
         if ( this.eyes)
         {
@@ -117,7 +117,7 @@ public class Nematode {
            float  y = PApplet.map(i, 0, length, border, nv.height - border);
          
 
-           
+
             // worm segment
             nv.circle(x, y, segmentSize);
             // limbs

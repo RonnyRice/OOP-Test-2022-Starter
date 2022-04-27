@@ -85,6 +85,9 @@ public class NematodeVisualiser extends PApplet
 	public void draw()
 	{	
 		background(0);
+		float strokeColour = map(nematodeIndex, 0, nematodes.size(), 0, 255);
+		stroke(strokeColour,255,255);
+		fill(strokeColour,255,255);
 		nematodes.get(nematodeIndex).render(this);
 		
 	}
