@@ -72,19 +72,7 @@ public class Nematode {
     public void setEyes(boolean eyes) {
         this.eyes = eyes;
     }
-    /*
-    public void drawArrows(NematodeVisualiser nv){
-		
-		nv.translate(nv.halfX, nv.halfY);
-		float x1 = 60;
-		float x2 = 200;
-		float y1 = 50;
-
-		nv.line(x1, y1, x2, -y1);
-
-
-	}
-    */
+    
     public void render(NematodeVisualiser nv){
 
         
@@ -94,7 +82,7 @@ public class Nematode {
         float Vsize = (segmentSize) * 0.75f; 
         float pLength = 20;
 
-        float border = (nv.height - (length * segmentSize)) / 2;
+        float border = (nv.height - (getLength() * segmentSize)) / 2;
         float y1 = PApplet.map(0, 0, length, border, nv.height - border);;
         float x = nv.width / 2;
 
@@ -112,16 +100,16 @@ public class Nematode {
             nv.circle(x+32, y1-32, 5);
         }
 
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < getLength(); i++)
         {
-           float  y = PApplet.map(i, 0, length, border, nv.height - border);
+           float  y = PApplet.map(i, 0, getLength(), border, nv.height - border);
          
 
 
             // worm segment
             nv.circle(x, y, segmentSize);
             // limbs
-            if (limbs == true)
+            if (getLimbs() == true)
             {
                 nv.line(x - radius, y, x - radius - 15, y);
                 nv.line(x + radius, y, x + radius + 15, y);
@@ -130,9 +118,9 @@ public class Nematode {
            
             //Sex
 
-            if(i == this.length-1)
+            if(i == getLength()-1)
             {
-            switch(this.gender)
+            switch(getGender())
             {
 
                 case "m": 
@@ -160,7 +148,7 @@ public class Nematode {
 
         }
      
-       
+       //arrows
         float y2 = nv.height/2;
 
         nv.triangle(x-300, y2,x-200,y2-50,x-200,y2+50);
